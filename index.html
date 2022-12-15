@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>XI Class Admission System</title>
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+	<meta http-equiv="pragma" content="no-cache">
+
+	<link rel="icon" type="image/x-icon" href="favicons/.-3266-favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="favicons/.-1199-favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<!-- <script src="js/jquery-1.8.2.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+
+	<script type="text/javascript">
+		function forwardApplication(tmp, tmp1) {
+			var link; var currentDate = new Date(); var currentMoment = currentDate.getMilliseconds(); var determinator = (currentMoment % 6) + 1;
+			tmp.href = 'http://smart' + determinator + '.xiclassadmission.gov.bd/board/' + tmp1
+		}
+
+		function forwardApplication1(tmp, tmp1) {
+			var link; var currentDate = new Date(); var currentMoment = currentDate.getMilliseconds(); var determinator = (currentMoment % 2);
+			if (determinator == 0)
+				tmp.href = 'http://board1.xiclassadmission.gov.bd:8089/board/' + tmp1
+			else if (determinator == 1)
+				tmp.href = 'http://board1.xiclassadmission.gov.bd:8090/board/' + tmp1
+			//return 'http://board'+determinator+'.xiclassadmission.gov.bd/board/'+tmp1;
+		}
+
+
+	</script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="css/xiclassadmission.gov.bd-style.css">
+	<!-- <script src="web.js"></script> -->
+	<style>
+		fieldset {
+			vertical-align: baseline;
+			width: 679px;
+			padding-right: 5px;
+		}
+	</style>
+	<style type="text/css">
+		.blink_text {
+			-webkit-animation-name: blinker;
+			-webkit-animation-duration: 1s;
+			-webkit-animation-timing-function: linear;
+			-webkit-animation-iteration-count: infinite;
+			-moz-animation-name: blinker;
+			-moz-animation-duration: 1s;
+			-moz-animation-timing-function: linear;
+			-moz-animation-iteration-count: infinite;
+			animation-name: blinker;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			color: red;
+		}
+
+		@-moz-keyframes blinker {
+			0% {
+				opacity: 1.0;
+			}
+
+			50% {
+				opacity: 0.0;
+			}
+
+			100% {
+				opacity: 1.0;
+			}
+		}
+
+		@-webkit-keyframes blinker {
+			0% {
+				opacity: 1.0;
+			}
+
+			50% {
+				opacity: 0.0;
+			}
+
+			100% {
+				opacity: 1.0;
+			}
+		}
+
+		@keyframes blinker {
+			0% {
+				opacity: 1.0;
+			}
+
+			50% {
+				opacity: 0.0;
+			}
+
+			100% {
+				opacity: 1.0;
+			}
+		}
+
+		.messageDivImg,
+		.messageDivImg_ {
+			background-color: #e6e6fa;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		.headerDivImg {
+			background-color: #a2b5cd;
+			color: #000080;
+		}
+
+		.imageDivLink {
+			float: right;
+		}
+
+		.titleTextImg {
+			float: center;
+			font-size: 1.2em;
+			font-weight: bold;
+			margin: 5px;
+		}
+
+		.button {
+			background: #9ed55f;
+			/* Old browsers */
+			background: linear-gradient(to bottom, #6AA121 10%, #9ed55f 150%);
+			/* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6AA121', endColorstr='#9ed55f', GradientType=0);
+			/* IE6-9 */
+			border: none;
+			color: white;
+			width: 220px;
+			//padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			//margin: 4px 2px;
+			cursor: pointer;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			border-radius: 10px;
+			text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+			//height: 20px;
+		}
+
+		.button1:hover {
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.button2:hover {
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 255, 0, 0.3);
+		}
+
+		h1 {
+			text-align: center;
+			font-family: Tahoma, Arial, sans-serif;
+			color: #06D85F;
+			margin: 80px 0;
+		}
+
+		.box {
+			width: 100%;
+			margin: 0 auto;
+			background: rgba(255, 255, 255, 0.4);
+			padding: 0px;
+			border: 2px solid #fff;
+			border-radius: 30px/60px;
+			background-clip: padding-box;
+			text-align: center;
+			color: red;
+		}
+
+		.buttonpop {
+			font-size: 1em;
+			padding: 10px;
+			color: #00008b;
+			border: 2px solid #06D85F;
+			border-radius: 20px/50px;
+			text-decoration: none;
+			cursor: pointer;
+			transition: all 0.5s ease-out;
+		}
+
+		.buttonpop:hover {
+			background: #458b00;
+			color: #fff;
+		}
+
+		.overlay {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.7);
+			transition: opacity 900ms;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.overlay:target {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.popup {
+			margin: 0px auto;
+			padding: 10px;
+			< !-- background: #e6e6fa;
+			-->background-color: transparent;
+			border-radius: 5px;
+			width: 70%;
+			position: relative;
+			transition: all 1s ease-in-out;
+		}
+
+		.popup h2 {
+			margin-top: 0;
+			color: #333;
+			font-family: Tahoma, Arial, sans-serif;
+		}
+
+		.popup .close {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			transition: all 100ms;
+			font-size: 30px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #333;
+		}
+
+		.popup .close {
+			color: #ff3030;
+		}
+
+		.popup .close:hover {
+			color: #06D85F;
+		}
+
+		.popup .content {
+			max-height: 30%;
+			overflow: auto;
+		}
+
+		.gradientBoxesWithOuterShadows {
+			margin-left: 65px;
+			height: 60%;
+			width: 95%;
+			//padding: 10px;
+			background-color: white;
+			font-size: 15px;
+			font-weight: bold;
+			color: #473c8b;
+			/* outer shadows  (note the rgba is red, green, blue, alpha) */
+			-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+			-moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+			/* rounded corners */
+			-webkit-border-radius: 12px;
+			-moz-border-radius: 7px;
+			border-radius: 7px;
+			/* gradients */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5));
+			background: -moz-linear-gradient(top, white 0%, white 0%, #D5E4F3 90%);
+		}
+
+		@media screen and (max-width: 700px) {
+			.box {
+				width: 70%;
+			}
+
+			.popup {
+				width: 70%;
+			}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<div id="header">
+			<!--
+             <div style="float: left;width: 85%;">
+                  <h1><font color="white">Ministry of Education</font></h1>
+                  <h2 style="font-size: 13px; text-align: center; color: #003399;">Dhaka, Rajshahi, Cumilla, Jashore, Chattogram, Barishal, Sylhet, Dinajpur, Mymensingh, and Bangladesh Madrasah Education Board</h2>
+            </div>
+             <div style="float: left;width: 9%;">
+                  <img src="bd.png" />
+            </div>
+-->
+			<!--
+		  <div style="float: left;width: 9%;">
+			  <img src="bd.png" height="80px" width="80px"  />
+		  </div>
+-->
+			<div style="float: left;width: 90%;">
+				<div style="float: left;width: 9%;">
+					<img src="images/xiclassadmission.gov.bd-bd.png">
+				</div>
+				<h1>
+					<font color="white">Ministry of Education</font>
+				</h1>
+				<h2 style="font-size: 12px; text-align: center; color: #003399;">
+					Dhaka, Rajshahi, Cumilla, Jashore, Chattogram, Barishal, Sylhet, Dinajpur, Mymensingh, and Bangladesh Madrasah
+					Education Board</h2>
+			</div>
+			<div style="float: right;width: 9%;">
+				<img src="images/xiclassadmission.gov.bd-mujib_100_logo.jpg" height="94px" width="94px">
+			</div>
+
+		</div>
+		<div id="nav" style="margin-bottom: 25px;">
+			<div style="margin-top: 10px;width: 150px;">
+
+				<!-- application nirdeshika left side -->
+				<div style="margin-top: 5px;">
+
+					<input style="margin-bottom: 5px;" type="button" class="myButton1"
+						value="&#2477;&#2480;&#2509;&#2468;&#2495;&#2480; &#2472;&#2496;&#2468;&#2495;&#2478;&#2494;&#2482;&#2494;"
+						onclick='openemnotice("notice_2022/Nitimala_2022_07122022.pdf")'><br>
+
+					<input style="margin-bottom: 5px;" type="button" class="myButton2"
+						value="&#2474;&#2498;&#2480;&#2509;&#2467;&#2494;&#2457;&#2509;&#2455; &#2472;&#2495;&#2480;&#2509;&#2470;&#2503;&#2486;&#2495;&#2453;&#2494;"
+						onclick='openemnotice("notice_2022/Nirdeshika_2022_07122022.pdf")'><br>
+
+
+					<input style="margin-bottom: 5px;" type="button" class="myButton1"
+						value="&#2475;&#2495; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2474;&#2470;&#2509;&#2471;&#2468;&#2495;"
+						onclick="window.location.href='payment.html'"> <br>
+
+					<input style="margin-bottom: 5px;" type="button" class="myButton2" value="Board Login"
+						onclick="window.location.href='http://xiclassadmission.gov.bd/board/login'">
+
+					<!--
+					<input style="margin-bottom: 5px;" type="button" class="myButton1" value="&#2476;&#2507;&#2480;&#2509;&#2465; &#2476;&#2495;&#2460;&#2509;&#2462;&#2474;&#2509;&#2468;&#2495;" style="width: 155px;" onclick='window.location.href="Notice.html"'/><br/>				
+					
+				<input style="margin-bottom: 5px; font-size: 13px;" type="button" class="myButton1" value="&#2472;&#2495;&#2476;&#2472;&#2509;&#2471;&#2472; &#2475;&#2495; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2474;&#2470;&#2509;&#2471;&#2468;&#2495;" style="width: 155px;" onclick="window.location.href='regpayment.html'"/> <br/>					
+
+					
+					
+
+					<input style="margin-bottom: 5px; font-size: 11px;" type="button" class="myButton1" value="View Registration Payment" style="width: 155px;" onclick='window.location.href=forwardApplication1(this,"viewRegPayment22")' /> <br/>					
+-->
+					<br>
+
+
+					<!--				 
+				 <input style="margin-bottom: 5px;" type="button" class="myButton2" value="&#2438;&#2476;&#2503;&#2470;&#2472;&#2503;&#2480; &#2476;&#2495;&#2460;&#2509;&#2462;&#2474;&#2509;&#2468;&#2495;" style="width: 155px;" onclick='openemnotice("notice/Application_Notice_20072020.pdf")'/><br/>
+					
+					<input style="margin-bottom: 5px;" type="button" class="myButton1" value="&#2488;&#2494;&#2471;&#2494;&#2480;&#2467; &#2472;&#2495;&#2480;&#2509;&#2470;&#2503;&#2486;&#2472;&#2494;" style="width: 155px;" onclick='openemnotice("notice/Notice_4Aug_2020.pdf")'/><br/>
+					
+					
+					<input style="margin-bottom: 5px;" type="button" class="myButton1" value="&#2438;&#2476;&#2503;&#2470;&#2472;&#2503;&#2480; &#2474;&#2470;&#2509;&#2471;&#2468;&#2495;" style="width: 155px;" onclick='openemnotice("notice/application_process.pdf")'/><br/>
+					
+					<input style="margin-bottom: 5px;" type="button" class="myButton2" value="SQ Approval" style="width: 155px;" onclick="window.location.href='https://xiclassadmission.gov.bd/board/login'"/>
+					
+-->
+				</div>
+
+
+				<div id="downloadeiinwithminimumGPA" style="margin-top: 5px;">
+
+
+
+
+					<!--PDF Downlad-->
+
+
+
+					<font size="3" color="red"
+						style="font-weight: bold; text-align: center;	display: inline-block;	position: relative;font-size: 14px; background-color: red; background-color: rgb(41,127,184);	color: rgb(255,255,255);	text-decoration: none;	text-transform: uppercase;	letter-spacing: 1px;	margin-bottom: 15px;	border-radius: 5px;	-moz-border-radius: 5px;	-webkit-border-radius: 5px;	text-shadow: 0px 1px 0px rgba(0,0,0,0.5);		zoom: 1; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ff123852,Positive=true);	-moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.2);	-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.2);	box-shadow: 0px 2px 2px rgba(0,0,0,0.2);		filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#33000000,Positive=true);	vertical-align: middle; margin-top: 30px; margin-bottom: 0px; padding-top: 10px; padding-bottom: 10px; border-color: #f1f5f8;	border-radius: 6px;	border-style: outset inset inset outset;	border-width: 1px;	 box-shadow: 0px 0px 8px #888888;">
+						College List (Board Wise) </font> <br>
+					<br>
+
+
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails" href="svg_2022/SVG_DHAKA.pdf"
+							target="_blank">Dhaka</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_CUMILLA.pdf" target="_blank">Cumilla</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_RAJSHAHI.pdf" target="_blank">Rajshahi</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_JASHORE.pdf" target="_blank">Jashore</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_CHATTOGRAM.pdf" target="_blank">Chattogram</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_BARISHAL.pdf" target="_blank">Barishal</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_SYLHET.pdf" target="_blank">Sylhet</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_DINAJPUR.pdf" target="_blank">Dinajpur</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_MADRASAH.pdf" target="_blank">Madrasah</a> </font>
+					<font size="2" color="green"> <a style="margin-bottom: 5px;" class="eiinDetails"
+							href="svg_2022/SVG_MYMENSINGH.pdf" target="_blank">Mymensingh</a> </font>
+
+				</div>
+			</div>
+		</div>
+		<center>
+			<div id="content" style="position: relative; margin-left: auto; margin-right: auto; ">
+
+
+
+
+				<div style="color: darkslateblue; font-size: 20px;">
+					<marquee scrollamount="5" onmouseover="this.setAttribute('scrollamount', 0, 0);this.stop();"
+						onmouseout="this.setAttribute('scrollamount', 4, 0);this.start();">
+
+						<font color="#d15656">
+							<!--
+			&#2474;&#2503;&#2478;&#2503;&#2472;&#2509;&#2463; &#2488;&#2494;&#2480;&#2509;&#2477;&#2494;&#2480;&#2503;&#2480; &#2478;&#2503;&#2439;&#2472;&#2463;&#2503;&#2472;&#2503;&#2472;&#2509;&#2488; &#2458;&#2482;&#2459;&#2503;&#2404;
+			-->
+							&#2474;&#2509;&#2480;&#2469;&#2478; &#2474;&#2480;&#2509;&#2479;&#2494;&#2527;&#2503;&#2480;
+							&#2437;&#2472;&#2482;&#2494;&#2439;&#2472; &#2438;&#2476;&#2503;&#2470;&#2472;
+							&#2455;&#2509;&#2480;&#2489;&#2467; &#2535;&#2539;
+							&#2465;&#2495;&#2488;&#2503;&#2478;&#2509;&#2476;&#2480; &#2536;&#2534;&#2536;&#2536;
+							&#2480;&#2494;&#2468; &#2535;&#2535;.&#2539;&#2543; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;
+							&#2458;&#2482;&#2476;&#2503;
+
+						</font>
+
+					</marquee>
+
+				</div>
+				<div class="gradientBoxesWithOuterShadows">
+					<center style="color:#07767b">
+						&#2480;&#2453;&#2509;&#2487;&#2467;&#2494;&#2476;&#2503;&#2453;&#2509;&#2487;&#2467;
+						&#2453;&#2494;&#2460;&#2503;&#2480; &#2460;&#2472;&#2509;&#2479;
+						&#2474;&#2509;&#2480;&#2468;&#2495;&#2470;&#2495;&#2472; &#2480;&#2494;&#2468; &#2535;&#2535;:&#2534;&#2534;
+						&#2463;&#2494; &#2469;&#2503;&#2453;&#2503; &#2535;&#2535;:&#2539;&#2543;
+						&#2478;&#2495;&#2472;&#2495;&#2463; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;
+						&#2438;&#2476;&#2503;&#2470;&#2472; &#2476;&#2472;&#2509;&#2471; &#2469;&#2494;&#2453;&#2476;&#2503;&#2404;
+					</center>
+					<br>
+					<span style="color: #1421b7;align: left;font-size: 18px;">
+						&#2535;&#2538;/&#2535;&#2536;/&#2536;&#2534;&#2536;&#2536; &#2468;&#2494;&#2480;&#2495;&#2454;
+						&#2480;&#2494;&#2468; &#2535;&#2535;:&#2535;&#2539; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;
+						&#2488;&#2480;&#2509;&#2476;&#2478;&#2507;&#2463; &#2535;&#2536;,&#2541;&#2540;,&#2540;&#2536;&#2539;
+						&#2460;&#2472; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496;
+						&#2488;&#2475;&#2482;&#2477;&#2494;&#2476;&#2503; &#2438;&#2476;&#2503;&#2470;&#2472;
+						&#2470;&#2494;&#2454;&#2495;&#2482; &#2453;&#2480;&#2503;&#2459;&#2503;&#2472;&#2404;
+						&#2488;&#2475;&#2482;&#2477;&#2494;&#2476;&#2503; &#2438;&#2476;&#2503;&#2470;&#2472;
+						&#2470;&#2494;&#2454;&#2495;&#2482; &#2453;&#2480;&#2494;&#2527; &#2468;&#2494;&#2433;&#2470;&#2503;&#2480;
+						&#2488;&#2476;&#2494;&#2439;&#2453;&#2503; &#2437;&#2477;&#2495;&#2472;&#2472;&#2509;&#2470;&#2472;
+						&#2447;&#2476;&#2434;
+						&#2486;&#2497;&#2477;&#2453;&#2494;&#2478;&#2472;&#2494;&#2404;&#2479;&#2494;&#2480;&#2494;&#2433;
+						&#2447;&#2454;&#2472;&#2451; &#2438;&#2476;&#2503;&#2470;&#2472; &#2453;&#2480;&#2503;&#2472;&#2472;&#2495;,
+						&#2468;&#2494;&#2433;&#2470;&#2503;&#2480; &#2437;&#2468;&#2495;
+						&#2488;&#2468;&#2509;&#2468;&#2509;&#2476;&#2480; &#2438;&#2476;&#2503;&#2470;&#2472; &#2453;&#2480;&#2503;
+						&#2475;&#2503;&#2482;&#2494;&#2480; &#2474;&#2480;&#2494;&#2478;&#2480;&#2509;&#2486;
+						&#2470;&#2503;&#2527;&#2494; &#2479;&#2494;&#2458;&#2509;&#2459;&#2503;&#2404;
+					</span>
+
+				</div>
+
+
+
+				<div style="width:100%; margin-top: 0px;padding-top: 0px;">
+					<div style="height:190px;padding-top: 0px;margin-top: 0px;font-size:2em;font-weight:bold;">
+						<div style="font-size: 26px;color: #347C17">
+							<div style="height:40px">
+								XI CLASS ADMISSION SYSTEM
+							</div>
+							<div style="font-size: 23px;color: #347C17">
+								(SESSION 2022 - 2023)
+							</div>
+
+						</div>
+						<div>
+							<a target="_blank" href="https://youtu.be/_dIIzHe-Zh0" style="font-size: 16px;">Link for video
+								demonstration</a>
+						</div>
+						<div style="margin-top: 0px;float: center">
+
+
+
+							<a onclick='forwardApplication(this,"application/applicationForm_TT")' class="button button2"
+								target="_blank" style="background: linear-gradient(to bottom, #bfafef 10%, #555ec9 150%); "
+								href="xiclassadmission.gov.html">
+								Apply Now</a>
+
+
+							<a class="button button2" target="_blank" style="width: 300px;" href="smart4/smart4.html">
+								Update Application</a>
+
+
+							<!--
+						<a onclick='forwardApplication1(this,"login")' class="button button2" target="_blank">  
+						College Login</a>
+						-->
+
+							<!--
+						<a onclick='forwardApplication(this,"application/applicationForm_TT")' class="button button3" target="_blank"
+						style="width: 275px; background: linear-gradient(to bottom, #ebc9f1 10%, #d55f9b 150%);">  
+						View Application</a>
+						-->
+
+							<!--		
+						<a onclick='forwardApplication(this,"viewResult22")' class="button button3" target="_blank"
+						style="width: 200px; background: linear-gradient(to bottom, #bfafef 10%, #555ec9 150%);">  
+						View Result</a>
+						<br>
+						<input style="margin-bottom: 5px; font-size: 16px; width: 230px;" type="button" class="myButton1" value="View Registration Payment" 
+							onclick='window.location.href=forwardApplication1(this,"viewRegPayment22")' />
+						-->
+							<!--
+						<a onclick='forwardApplication(this,"viewRegPayment22")' class="button button3" target="_blank"
+						style="width: 400px; background: linear-gradient(to bottom, #ebc9f1 10%, #d55f9b 150%);">  
+						View Registration Payment</a>
+						-->
+
+						</div>
+
+					</div>
+
+					<!--	   
+      			<div style="margin-top: 0px;float: center"> 
+      				<a style="font-size: 23px; color: #C70039;" style="cursor: pointer;" onclick='openemnotice("notice/Notice_10082020.pdf")'> 
+				 		&#2460;&#2480;&#2497;&#2480;&#2495; &#2476;&#2495;&#2460;&#2509;&#2462;&#2474;&#2509;&#2468;&#2495;
+				 	</a>
+				</div>
+	   -->
+
+					<div class="gradientBoxesWithOuterShadows">
+
+						<center style="color: #23a4ef; float: center; text-align: justify; font-size: 16px;">
+							&#2482;&#2453;&#2509;&#2487;&#2509;&#2479; &#2453;&#2480;&#2494;
+							&#2479;&#2494;&#2458;&#2509;&#2459;&#2503; &#2479;&#2503;, &#2438;&#2476;&#2503;&#2470;&#2472;
+							&#2475;&#2495; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;&#2503;&#2480; &#2488;&#2478;&#2527;
+							&#2453;&#2507;&#2472; &#2453;&#2507;&#2472;
+							&#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496; &#2477;&#2497;&#2482;
+							&#2476;&#2507;&#2480;&#2509;&#2465; &#2472;&#2495;&#2480;&#2509;&#2476;&#2494;&#2458;&#2472;
+							&#2453;&#2480;&#2494;&#2480; &#2453;&#2494;&#2480;&#2467;&#2503;
+							&#2460;&#2463;&#2495;&#2482;&#2468;&#2494; &#2488;&#2499;&#2487;&#2509;&#2463;&#2495;
+							&#2489;&#2458;&#2509;&#2459;&#2503;&#2404; &#2488;&#2497;&#2468;&#2480;&#2494;&#2434;
+							&#2438;&#2476;&#2503;&#2470;&#2472; &#2475;&#2495;
+							&#2474;&#2509;&#2480;&#2470;&#2494;&#2472;&#2503;&#2480; &#2488;&#2478;&#2527;
+							&#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496;&#2453;&#2503;
+							&#2488;&#2468;&#2480;&#2509;&#2453;&#2468;&#2494;&#2480; &#2488;&#2494;&#2469;&#2503;
+							&#2447;&#2488;&#2447;&#2488;&#2488;&#2495; &#2476;&#2494;
+							&#2488;&#2478;&#2478;&#2494;&#2472;&#2503;&#2480; &#2474;&#2480;&#2496;&#2453;&#2509;&#2487;&#2494;&#2480;
+							&#2474;&#2494;&#2486;&#2503;&#2480; &#2488;&#2472;, &#2476;&#2507;&#2480;&#2509;&#2465;,
+							&#2480;&#2507;&#2482; &#2472;&#2478;&#2509;&#2476;&#2480; &#2451;
+							&#2478;&#2507;&#2476;&#2494;&#2439;&#2482; &#2472;&#2478;&#2509;&#2476;&#2480;
+							&#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2453;&#2480;&#2494;&#2480; &#2460;&#2472;&#2509;&#2479;
+							&#2472;&#2495;&#2480;&#2509;&#2470;&#2503;&#2486; &#2470;&#2503;&#2527;&#2494;
+							&#2479;&#2494;&#2458;&#2509;&#2459;&#2503;&#2404;
+						</center>
+						<!--
+					<br>
+					<center>
+					<a onclick='openemnotice("notice_2021/Notice_080522.pdf")' style="font-size: 18px; color: #d15656;">
+						&#2476;&#2507;&#2480;&#2509;&#2465; &#2476;&#2495;&#2460;&#2509;&#2462;&#2474;&#2509;&#2468;&#2495;
+					</a>
+					</center>
+		-->
+
+
+						<hr>
+
+						<center style="color: #d15656; float: center; text-align: justify; font-size: 16px;">
+							&#2535;) &#2536;&#2534;&#2536;&#2536;-&#2536;&#2534;&#2536;&#2537;
+							&#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2476;&#2480;&#2509;&#2487;&#2503;
+							&#2447;&#2453;&#2494;&#2470;&#2486; &#2486;&#2509;&#2480;&#2503;&#2467;&#2496;&#2468;&#2503;
+							&#2477;&#2480;&#2509;&#2468;&#2495;&#2480;
+							&#2472;&#2496;&#2468;&#2495;&#2478;&#2494;&#2482;&#2494;-&#2536;&#2534;&#2536;&#2536;
+							&#2437;&#2472;&#2497;&#2479;&#2494;&#2527;&#2496; " ***
+							&#2441;&#2482;&#2509;&#2482;&#2503;&#2454;&#2509;&#2479; &#2437;&#2472;&#2482;&#2494;&#2439;&#2472;
+							&#2476;&#2509;&#2479;&#2468;&#2496;&#2468;
+							&#2478;&#2509;&#2479;&#2494;&#2472;&#2497;&#2527;&#2494;&#2482;&#2495; &#2453;&#2507;&#2472;
+							&#2477;&#2480;&#2509;&#2468;&#2495;&#2480; &#2453;&#2494;&#2480;&#2509;&#2479;&#2453;&#2509;&#2480;&#2478;
+							&#2453;&#2480;&#2494; &#2489;&#2476;&#2503; &#2472;&#2494;&#2404; "
+						</center>
+
+						<!--
+<hr>			
+
+			<center style="color: #23a4ef; float: center; text-align: justify; font-size: 16px;">			
+				&#2535;) &#2538;&#2480;&#2509;&#2469; &#2474;&#2480;&#2509;&#2479;&#2494;&#2527;&#2503; &#2472;&#2495;&#2480;&#2509;&#2476;&#2494;&#2458;&#2495;&#2468; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496;&#2470;&#2503;&#2480; &#2438;&#2455;&#2494;&#2478;&#2496; &#2534;&#2536;/&#2534;&#2537;/&#2536;&#2534;&#2536;&#2536; &#2468;&#2494;&#2480;&#2495;&#2454; &#2489;&#2468;&#2503; &#2534;&#2541;/&#2534;&#2537;/&#2536;&#2534;&#2536;&#2536; &#2468;&#2494;&#2480;&#2495;&#2454; &#2476;&#2495;&#2453;&#2494;&#2482; &#2539;:&#2534;&#2534; &#2463;&#2494;&#2480; &#2478;&#2471;&#2509;&#2479;&#2503; &#2478;&#2507;&#2476;&#2494;&#2439;&#2482; &#2476;&#2509;&#2479;&#2494;&#2434;&#2453;&#2495;&#2434; &#2458;&#2494;&#2480;&#2509;&#2460; &#2476;&#2494;&#2470;&#2503; &#2480;&#2503;&#2460;&#2495;&#2488;&#2509;&#2463;&#2509;&#2480;&#2503;&#2486;&#2472; &#2475;&#2495; &#2536;&#2536;&#2542;/= &#2463;&#2494;&#2453;&#2494; ( &#2451;&#2527;&#2503;&#2476;&#2488;&#2494;&#2439;&#2463;&#2503; &#2441;&#2482;&#2509;&#2482;&#2503;&#2454;&#2495;&#2468; &#2437;&#2474;&#2494;&#2480;&#2503;&#2463;&#2480;-&#2447;&#2480; &#2478;&#2494;&#2471;&#2509;&#2479;&#2478;&#2503;) &#2460;&#2478;&#2494; &#2470;&#2495;&#2482;&#2503; &#2477;&#2480;&#2509;&#2468;&#2495;&#2480; &#2474;&#2509;&#2480;&#2494;&#2469;&#2478;&#2495;&#2453; &#2472;&#2495;&#2486;&#2509;&#2458;&#2494;&#2527;&#2472; &#2488;&#2478;&#2509;&#2474;&#2472;&#2509;&#2472; &#2489;&#2476;&#2503;&#2404; &#2468;&#2476;&#2503; &#2478;&#2494;&#2439;&#2455;&#2509;&#2480;&#2503;&#2486;&#2472; &#2474;&#2509;&#2480;&#2494;&#2474;&#2509;&#2468; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496;&#2453;&#2503; &#2472;&#2468;&#2497;&#2472; &#2453;&#2480;&#2503; &#2477;&#2480;&#2509;&#2468;&#2495; &#2472;&#2495;&#2486;&#2509;&#2458;&#2494;&#2527;&#2472; &#2453;&#2480;&#2468;&#2503; &#2489;&#2476;&#2503; &#2472;&#2494; &#2437;&#2480;&#2509;&#2469;&#2494;&#2510; &#2480;&#2503;&#2460;&#2495;&#2488;&#2509;&#2463;&#2509;&#2480;&#2503;&#2486;&#2472; &#2475;&#2495; &#2470;&#2495;&#2468;&#2503; &#2489;&#2476;&#2503; &#2472;&#2494;&#2404; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494; &#2474;&#2509;&#2480;&#2468;&#2495;&#2487;&#2509;&#2464;&#2494;&#2472;&#2503; &#2477;&#2480;&#2509;&#2468;&#2495;&#2480; &#2468;&#2494;&#2480;&#2495;&#2454; &#2534;&#2536;/&#2534;&#2537;/&#2536;&#2534;&#2536;&#2536; &#2489;&#2468;&#2503; &#2534;&#2541;/&#2534;&#2537;/&#2536;&#2534;&#2536;&#2536; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;&#2404;
+					<br>
+					<center>
+					<a onclick='openemnotice("notice_2021/Notice_020322.pdf")' style="font-size: 18px; color: #d15656;">
+						&#2476;&#2507;&#2480;&#2509;&#2465; &#2476;&#2495;&#2460;&#2509;&#2462;&#2474;&#2509;&#2468;&#2495;
+					</a>
+					</center>
+			</center>
+			-->
+
+						<!--
+			<center style="color: #d15656; float: center; text-align: justify;">
+				&#2472;&#2495;&#2480;&#2509;&#2476;&#2494;&#2458;&#2495;&#2468; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496;&#2470;&#2503;&#2480; &#2438;&#2455;&#2494;&#2478;&#2496; &#2537;&#2534;/&#2534;&#2535;/&#2536;&#2534;&#2536;&#2536; &#2468;&#2494;&#2480;&#2495;&#2454; &#2489;&#2468;&#2503; &#2534;&#2540;/&#2534;&#2536;/&#2536;&#2534;&#2536;&#2536; &#2468;&#2494;&#2480;&#2495;&#2454; &#2488;&#2472;&#2509;&#2471;&#2509;&#2479;&#2494; &#2542;:&#2534;&#2534; &#2463;&#2494;&#2480; &#2478;&#2471;&#2509;&#2479;&#2503; &#2478;&#2507;&#2476;&#2494;&#2439;&#2482; &#2476;&#2509;&#2479;&#2494;&#2434;&#2453;&#2495;&#2434; &#2458;&#2494;&#2480;&#2509;&#2460; &#2476;&#2494;&#2470;&#2503; &#2480;&#2503;&#2460;&#2495;&#2488;&#2509;&#2463;&#2509;&#2480;&#2503;&#2486;&#2472; &#2475;&#2495; &#2536;&#2536;&#2542;/= &#2463;&#2494;&#2453;&#2494; ( &#2451;&#2527;&#2503;&#2476;&#2488;&#2494;&#2439;&#2463;&#2503; &#2441;&#2482;&#2509;&#2482;&#2503;&#2454;&#2495;&#2468; &#2437;&#2474;&#2494;&#2480;&#2503;&#2463;&#2480;-&#2447;&#2480; &#2478;&#2494;&#2471;&#2509;&#2479;&#2478;&#2503;) &#2460;&#2478;&#2494; &#2470;&#2495;&#2482;&#2503; &#2477;&#2480;&#2509;&#2468;&#2495;&#2480; &#2474;&#2509;&#2480;&#2494;&#2469;&#2478;&#2495;&#2453; &#2472;&#2495;&#2486;&#2509;&#2458;&#2494;&#2527;&#2472; &#2488;&#2478;&#2509;&#2474;&#2472;&#2509;&#2472; &#2489;&#2476;&#2503;&#2404; &#2468;&#2476;&#2503; &#2474;&#2480;&#2476;&#2480;&#2509;&#2468;&#2496;&#2468;&#2503; &#2478;&#2494;&#2439;&#2455;&#2509;&#2480;&#2503;&#2486;&#2472; &#2489;&#2482;&#2503; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496;&#2453;&#2503; &#2472;&#2468;&#2497;&#2472; &#2453;&#2480;&#2503; &#2477;&#2480;&#2509;&#2468;&#2495; &#2472;&#2495;&#2486;&#2509;&#2458;&#2494;&#2527;&#2472; &#2453;&#2480;&#2468;&#2503; &#2489;&#2476;&#2503; &#2472;&#2494; &#2437;&#2480;&#2509;&#2469;&#2494;&#2510; &#2480;&#2503;&#2460;&#2495;&#2488;&#2509;&#2463;&#2509;&#2480;&#2503;&#2486;&#2472; &#2475;&#2495; &#2470;&#2495;&#2468;&#2503; &#2489;&#2476;&#2503; &#2472;&#2494;&#2404; &#2486;&#2495;&#2453;&#2509;&#2487;&#2494; &#2474;&#2509;&#2480;&#2468;&#2495;&#2487;&#2509;&#2464;&#2494;&#2472;&#2503; &#2477;&#2480;&#2509;&#2468;&#2495;&#2480; &#2468;&#2494;&#2480;&#2495;&#2454; &#2535;&#2543;/&#2534;&#2536;/&#2536;&#2534;&#2536;&#2536; &#2489;&#2468;&#2503; &#2536;&#2538;/&#2534;&#2536;/&#2536;&#2534;&#2536;&#2536; &#2474;&#2480;&#2509;&#2479;&#2472;&#2509;&#2468;&#2404; &#2453;&#2509;&#2482;&#2494;&#2488; &#2486;&#2497;&#2480;&#2497;&#2480; &#2468;&#2494;&#2480;&#2495;&#2454; &#2534;&#2536;/&#2534;&#2537;/&#2536;&#2534;&#2536;&#2536;&#2404;
+			</center>
+			<hr>
+			<center style="color: blue; float: center; text-align: justify;">			
+				&#2486;&#2495;&#2453;&#2509;&#2487;&#2494;&#2480;&#2509;&#2469;&#2496; &#2472;&#2495;&#2486;&#2509;&#2458;&#2494;&#2527;&#2472; &#2472;&#2494; &#2453;&#2480;&#2482;&#2503; &#2475;&#2482;&#2494;&#2475;&#2482; &#2451; &#2438;&#2476;&#2503;&#2470;&#2472; &#2476;&#2494;&#2468;&#2495;&#2482; &#2489;&#2476;&#2503; &#2447;&#2476;&#2434; &#2438;&#2476;&#2503;&#2470;&#2472;&#2453;&#2494;&#2480;&#2496;&#2453;&#2503; &#2474;&#2497;&#2472;&#2480;&#2494;&#2527; &#2438;&#2476;&#2503;&#2470;&#2472; &#2475;&#2495; &#2488;&#2489; &#2438;&#2476;&#2503;&#2470;&#2472; &#2453;&#2480;&#2468;&#2503; &#2489;&#2476;&#2503;&#2404;
+			</center>
+		-->
+					</div>
+
+
+					<span style="color:#0080ff;font-size:22px;">
+
+						<br>
+						<div style="margin-top: 0px;float: center">
+							<a style="font-weight: bold; font-size: 25px; color: #C70039; cursor: pointer;"
+								onclick='forwardApplication(this,"pinretrieval")' target="_blank" href="xiclassadmission.gov.html">
+								&#2488;&#2495;&#2453;&#2495;&#2441;&#2480;&#2495;&#2463;&#2495; &#2453;&#2507;&#2465;
+								&#2474;&#2497;&#2472;&#2480;&#2497;&#2470;&#2509;&#2471;&#2494;&#2480;
+							</a>
+						</div>
+						<div style="margin-top: 0px;float: center;">
+							<a style="font-weight: bold; font-size: 25px; color: #D35400; cursor: pointer;"
+								onclick='forwardApplication(this,"mobretrieval")' target="_blank" href="xiclassadmission.gov.html">
+								&#2478;&#2507;&#2476;&#2494;&#2439;&#2482; &#2472;&#2494;&#2478;&#2509;&#2476;&#2494;&#2480;
+								&#2474;&#2480;&#2495;&#2476;&#2480;&#2509;&#2468;&#2472;
+							</a>
+						</div>
+						<br>
+
+					</span>
+
+
+
+					<!-- Result  -->
+					<!--
+			  <div style="margin-top: 0px;float: center">
+             		<input type="button" class="button button2" 
+					value="Result" 
+					onclick="window.open('http://app11.xiclassadmission.gov.bd/board/viewResult')" />
+      		  </div>
+	-->
+
+
+
+					<!-- notice for applicant and college Button -->
+					<!-- -->
+
+					<!--  Help Line board -->
+
+
+					<div>
+
+
+						<table style="width: 98%;">
+							<tr>
+								<td colspan="4" style="text-align: center; font-size: 18px; color: #006008; font-weight: bold">XIClass
+									Application Help Line</td>
+							</tr>
+							<tr>
+								<th colspan="1" style="padding-top: 10px; vertical-align: top;text-align: left;">Application
+									Helpline<br>(8:00 AM to 8:00 PM)</th>
+								<th colspan="1" style="padding-top: 10px; vertical-align: top;text-align: left;">Board Helpline<br>(9:00
+									AM to 5:00 PM)</th>
+								<th colspan="1" style="padding-top: 10px; vertical-align: top;text-align: left;">Board Helpline<br>(9:00
+									AM to 5:00 PM)</th>
+								<th colspan="1" style="padding-top: 10px; vertical-align: top;text-align: left;">Payment Operator
+									Helpline</th>
+							</tr>
+							<tr>
+
+								<td style="padding-left: 10px;vertical-align: top;text-align: left;">
+
+									01706-504169<br>
+									01305-703874<br>
+									01706-504179<br>
+									01768-682240<br>
+									01789-028173<br>
+									01729-722561<br>
+									01789-028041<br>
+								</td>
+								<td style="padding-left: 10px;vertical-align: top;text-align: left;">
+
+									01776-771224 (Madrasa)<br>
+									01751-877677 (Madrasa)<br>
+									01610-698552 (Madrasa)<br><br>
+
+									01301-263120 (Dhaka)<br>
+									01712-114424 (Dhaka)<br>
+									01627-761515 (Dhaka)<br>
+									01718-586074 (Dhaka)<br>
+									01820-574439 (Dhaka)<br>
+									01962-852323 (Dhaka)<br>
+									01610-304137 (Dhaka)<br>
+									01718-586074 (Dhaka)<br>
+									01913-270273 (Dhaka)<br>
+									01534-294646 (Dhaka)<br>
+									01758-800645 (Dhaka)<br>
+									01879-870886 (Dhaka)<br>
+									01959-104033 (Dhaka)<br>
+									01534-821416 (Dhaka)<br><br>
+
+									01711-829169 (Rajshahi)<br>
+									01511-099131 (Rajshahi)<br>
+									01935-177307 (Rajshahi)<br>
+									01911-665244 (Rajshahi)<br>
+									01676-455685 (Rajshahi)<br>
+									01723-665413 (Rajshahi)<br>
+									01912-215414 (Rajshahi)<br>
+									01712-141214 (Rajshahi)<br>
+									01754-121210 (Rajshahi)<br>
+									<br>
+
+								</td>
+								<td style="padding-left: 10px;vertical-align: top;text-align: left;">
+
+
+									01892-199954 (Chattogram)<br>
+									01869-763456 (Chattogram)<br>
+									01917-243477 (Chattogram)<br>
+									01711-161917 (Chattogram)<br>
+									01554-310380 (Chattogram)<br>
+									01819-635791 (Chattogram)<br><br>
+
+									01755-699160 (Cumilla)<br>
+									01711-199436 (Cumilla)<br> <br>
+
+									01873-356756 (Jashore)<br>
+									01914-776290 (Jashore)<br>
+									01689-087339 (Jashore)<br>
+									01710-399266 (Jashore)<br><br>
+
+									01733-377760 (Sylhet)<br>
+									01733-377761 (Sylhet)<br>
+									01733-377762 (Sylhet)<br><br>
+
+
+									01715-714236 (Barishal)<br>
+									01715-848271 (Barishal)<br>
+									01727-669470 (Barishal)<br><br>
+
+									01750-330634 (Dinajpur)<br>
+									01722-608157 (Dinajpur)<br>
+									01534-923749 (Dinajpur)<br>
+									01303-198348 (Dinajpur)<br><br>
+
+
+
+									01903-833409 (Mymensingh)<br><br>
+
+
+
+
+								</td>
+
+								<td style="vertical-align: top;">
+									<b>16216 (Rocket ) </b><br> <br>
+
+									16247 (bKash )<br> <br>
+
+									16167 (Nagad) <br>
+									09609616167 (Nagad) <br> <br>
+
+									16268 (upay) <br> <br>
+
+									16733 (tap) <br> <br>
+
+									16269 (OKWallet) <br> <br>
+								</td>
+
+
+							</tr>
+						</table>
+
+
+					</div>
+
+
+				</div>
+
+			</div>
+		</center>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="footer">
+			<div class="copyRight">
+				2022 Ministry of Education, All Rights Reserved
+			</div>
+			<div class="techicalAssistance">
+				<span>Technical Assistance by:</span> <a href="http://www.buet.ac.bd/" target="_blank"> <span>BUET</span> <img
+						src="images/xiclassadmission.gov.bd-buetLogo.png" style="vertical-align:middle" width="35" height="35"
+						alt="BUET Logo"> </a>
+			</div>
+		</div>
+	</div>
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			padding-top: 100px;
+			/* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			//overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.4);
+			/* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			background-color: #fefefe;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+		}
+
+		/* The Close Button */
+		.close {
+			color: #aaaaaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.pdfobject-container {
+			height: 80%;
+			width: 80%;
+			border: 1rem solid rgba(0, 0, 0, .1);
+		}
+
+		.centered {
+			position: fixed;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+	<script src="js/2.2.7-pdfobject.min.js"
+		integrity="sha512-g16L6hyoieygYYZrtuzScNFXrrbJo/lj9+1AYsw+0CYYYZ6lx5J3x9Yyzsm+D37/7jMIGh0fDqdvyYkNWbuYuA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- <script src="js/pdfobject.js"></script> -->
+	<div id="myModal1" style="display: none;text-align: center;" class="modal centered">
+		<div id="myModal" style="display: inline-block;vertical-align: middle;">
+			<div class="modal-content">
+				<span class="close">
+				</span>
+			</div>
+		</div>
+		<img id="closeimg" src="images/xiclassadmission.gov.bd-close.png" height="45px" width="45px"
+			style="position: absolute; top: 0;right: 10;" onclick="closeModal()">
+	</div>
+
+	<script>
+		var modal = document.getElementById("myModal1");
+		var btn = document.getElementById("myBtn");
+		var span = document.getElementsByClassName("close")[0];
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+		function openemnotice(fileName) {
+			modal.style.display = "block";
+			PDFObject.embed(fileName, "#myModal");
+		}
+		function closeModal() {
+			modal.style.display = "none";
+		}
+		$(function () {
+			var img = $("#closeimg"),
+				width = img.get(0).width,
+				screenWidth = $(window).width(),
+				duration = 50000;
+
+			function animatePlane() {
+				img.css("top", -width).animate({
+					"top": screenWidth
+				}, duration, animatePlane);
+			}
+
+			animatePlane();
+		});	
+	</script>
+
+
+	<!--
+<script>PDFObject.embed("payment/Teletalk.pdf", "#example1");</script>	  
+-->
+</body>
+
+</html>
