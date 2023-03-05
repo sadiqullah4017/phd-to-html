@@ -1,0 +1,82 @@
+* {
+    padding:0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #fffff9;
+}
+.sadik{
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    color: lightgray;
+}
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+form h1 {
+    text-align: center;
+    padding-bottom: 17px;
+    color: darkblue;
+
+}
+form label {
+    font-size: 28px;
+}
+form input, textarea {
+    font-size: 26px;
+ 
+}
+input ,textarea{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 0px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    border: 2px solid gray;
+    outline: none;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+textarea {
+    height: 120px;
+}
+input:focus, textarea:focus{
+    
+    border-color: orange;
+   
+    box-shadow: 0 0 20px orange;
+
+}
+button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 10px 35px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    background-color: orange;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.4s;
+    cursor: pointer;
+}
+button:hover {
+    background: orangered;
+    color: white;
+
+}
+button:active {
+    background: blue;
+}
